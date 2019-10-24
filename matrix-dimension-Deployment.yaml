@@ -1,0 +1,63 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: data-pv-claim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 7Gi
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: matrix-dimension
+  labels:
+    app: matrix-dimension
+spec:
+  initContainers:
+    - name: volume-mount-hack
+      image: busybox
+      command:
+        - "/bin/sh"
+        - "-c"
+        - "--"
+      args:
+        - "chown -R 1000:1000 /data"
+      volumeMounts:
+        - name: data-volume
+          mountPath: /data  
+  containers:
+    - name: matrix-dimension
+      image: turt2live/matrix-dimension
+      volumeMounts:
+        - name: data-volume
+          mountPath: /data  
+        - name: config-volume
+          mountPath: /data/config.yaml
+          subPath: config.yaml
+    - name: sh
+      image: busybox
+      command:
+        - "/bin/sh"
+        - "-c"
+        - "--"
+      args:
+        - "while true; do sleep 30; done;"
+      volumeMounts:
+        - name: data-volume
+          mountPath: /data  
+        - name: config-volume
+          mountPath: /data/config.yaml
+          subPath: config.yaml
+  volumes:
+    - name: data-volume
+      persistentVolumeClaim:
+        claimName: data-pv-claim
+    - name: config-volume
+      configMap:
+        name: matrix-dimension
+  restartPolicy: Always
+

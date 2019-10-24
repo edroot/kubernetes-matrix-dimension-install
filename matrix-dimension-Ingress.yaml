@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: "matrix-dimension"
+  annotations:
+    cert-manager.io/issuer: "matrix-dimension-prod"
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  rules:
+    - host: "dimension.sunsingerus.com"
+      http:
+        paths:
+          - path: "/"
+            backend:
+              serviceName: matrix-dimension-cip
+              servicePort: 80
+  tls:
+    - hosts:
+        - "dimension.sunsingerus.com"
+      secretName: matrix-dimension-tls
+
