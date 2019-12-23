@@ -22,6 +22,9 @@ Explanation copy+pasted from here: [https://t2bot.io/docs/access_tokens/](https:
 ```
 
 
+![settings](img/settings-accessToken.png)
+
+
 
 How to install matrix-dimension on kubernetes
 
