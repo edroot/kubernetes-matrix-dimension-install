@@ -33,7 +33,7 @@ data:
       # for tracking custom sticker pack updates. This should be a user configured on the homeserver
       # and be dedicated to Dimension (create a user named "dimension" on your homeserver). For
       # information on how to acquire an access token, visit https://t2bot.io/docs/access_tokens
-      accessToken: "MDAyNWxvY2F0aW9uIHN5bmFwc2Uuc3Vuc2luZ2VydXMuY29tCjAwMTNpZGVudGlmaWVyIGtleQowMDEwY2lkIGdlbiA9IDEKMDAzNWNpZCB1c2VyX2lkID0gQGRpbWVuc2lvbjpzeW5hcHNlLnN1bnNpbmdlcnVzLmNvbQowMDE2Y2lkIHR5cGUgPSBhY2Nlc3MKMDAyMWNpZCBub25jZSA9IENQcGZFa21wWmcuVX5QOlkKMDAyZnNpZ25hdHVyZSB7aVgNJ-NnguroqjOF7skq2lPiA0Kf9XeV2n9_EaFTJwo"
+      accessToken: "MDAyNWxvY2F0aW9uIHN5bmFwc2Uuc3Vuc2luZ2VydXMuY29tCjAwMTNpZGVudGlmaWVyIGtleQowMDEwY2lkIGdlbiA9IDEKMDAzNWNpZCB1c2VyX2lkID0gQGRpbWVuc2lvbjpzeW5hcHNlLnN1bnNpbmdlcnVzLmNvbQowMDE2Y2lkIHR5cGUgPSBhY2Nlc3MKMDAyMWNpZCBub25jZSA9IGtQOWN-SixReUJkUT1lTHkKMDAyZnNpZ25hdHVyZSAZs2mQI-Ak7F3yA9TgvhjuQ2cA8QuuH4jKls7dpKsWFQo"
     
     # These users can modify the integrations this Dimension supports.
     # To access the admin interface, open Dimension in Riot and click the settings icon.
